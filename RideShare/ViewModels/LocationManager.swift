@@ -16,6 +16,7 @@ import MapKit
         center: .init(latitude: 37.334_900, longitude: -122.009_020),
         span: .init(latitudeDelta: 0.2, longitudeDelta: 0.2)
     )
+     @Published var isLocationAccessDenied = false
     
     override init() {
         super.init()
@@ -42,8 +43,16 @@ import MapKit
     
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        guard .authorizedWhenInUse == manager.authorizationStatus else { return }
-        locationManager.requestLocation()
+//        guard .authorizedWhenInUse == manager.authorizationStatus else { return }
+//        locationManager.requestLocation()
+        switch manager.authorizationStatus {
+        case .authorizedWhenInUse:
+            locationManager.requestLocation()
+        case .denied:
+            isLocationAccessDenied = true
+        default:
+            break
+        }
     }
     
     
