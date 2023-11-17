@@ -1,40 +1,55 @@
 //
-//  UserMapView.swift
+//  UserMap2.swift
 //  RideShare
 //
-//  Created by Colstin Donaldson on 11/15/23.
+//  Created by Colstin Donaldson on 11/16/23.
 //
 
 import SwiftUI
 import MapKit
-import CoreLocation
 
 struct UserMapView: View {
-    @State private var cameraPosition: MapCameraPosition = . region (.userRegion)
-    let locationManager = CLLocationManager()
-     
+    @StateObject var manager = LocationManager()
+    @State var camera: MapCameraPosition = .userLocation(fallback: .automatic)
+    
+    let tower = CLLocationCoordinate2D(
+        latitude: 43.64272145122822, 
+        longitude: -79.38712117539345)
+    
+    let ago = CLLocationCoordinate2D(
+        latitude: 43.653823848647725, 
+        longitude: -79.3925230435043)
+ 
+    let rom = CLLocationCoordinate2D(
+        latitude: 43.66785712547134, 
+        longitude: -79.39465908518817)
+    
+   
+    
     var body: some View {
-        Map(position: $cameraPosition){
-            //Annotation("My Location", coordinate: .userLocation)
-        }
-            .onAppear {
-                locationManager.requestWhenInUseAuthorization()
+        Map(position: $camera) {
+            Marker("CN Tower",systemImage: "building", coordinate: tower)
+                .tint(.blue)
+            
+            Annotation("Art Gallery", coordinate: ago) {
+                Image(systemName: "person.crop.artframe")
+                    .foregroundStyle(.white)
+                    .padding(3)
+                    .background(.black)
             }
-  
-    }
-}
-
-extension CLLocationCoordinate2D {
-    static var userLocation: CLLocationCoordinate2D {
-        return .init(latitude: 36.018110, longitude: -115.124460)
-    }
-}
-
-extension MKCoordinateRegion {
-    static var userRegion: MKCoordinateRegion {
-        return .init (center: .userLocation, 
-                      latitudinalMeters: 10000,
-                      longitudinalMeters: 10000)
+            
+            Marker("Muesum", systemImage: "building.columns", coordinate: rom)
+                .tint(.orange)
+            
+            UserAnnotation()
+        }
+        .mapControls {
+            MapUserLocationButton()
+            MapCompass()
+            MapScaleView()
+        }
+      
+        
     }
 }
 

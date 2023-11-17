@@ -7,24 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D62D6BF52B06B8EF0040FB9C /* UserMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62D6BF42B06B8EF0040FB9C /* UserMapView.swift */; };
 		D65939EF2B0559FA008972D5 /* RideShareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65939EE2B0559FA008972D5 /* RideShareApp.swift */; };
 		D65939F12B0559FA008972D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65939F02B0559FA008972D5 /* ContentView.swift */; };
 		D65939F32B0559FB008972D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D65939F22B0559FB008972D5 /* Assets.xcassets */; };
 		D65939F62B0559FB008972D5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D65939F52B0559FB008972D5 /* Preview Assets.xcassets */; };
-		D65939FD2B056147008972D5 /* UserMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65939FC2B056147008972D5 /* UserMapView.swift */; };
 		D65939FF2B05615B008972D5 /* UserTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65939FE2B05615B008972D5 /* UserTabView.swift */; };
 		D6593A012B0561B5008972D5 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6593A002B0561B5008972D5 /* UserListView.swift */; };
+		D6593A032B057549008972D5 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6593A022B057549008972D5 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D62D6BF42B06B8EF0040FB9C /* UserMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMapView.swift; sourceTree = "<group>"; };
 		D65939EB2B0559FA008972D5 /* RideShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D65939EE2B0559FA008972D5 /* RideShareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideShareApp.swift; sourceTree = "<group>"; };
 		D65939F02B0559FA008972D5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D65939F22B0559FB008972D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D65939F52B0559FB008972D5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D65939FC2B056147008972D5 /* UserMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMapView.swift; sourceTree = "<group>"; };
 		D65939FE2B05615B008972D5 /* UserTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTabView.swift; sourceTree = "<group>"; };
 		D6593A002B0561B5008972D5 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
+		D6593A022B057549008972D5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +63,8 @@
 				D65939F02B0559FA008972D5 /* ContentView.swift */,
 				D65939FE2B05615B008972D5 /* UserTabView.swift */,
 				D6593A002B0561B5008972D5 /* UserListView.swift */,
-				D65939FC2B056147008972D5 /* UserMapView.swift */,
+				D62D6BF42B06B8EF0040FB9C /* UserMapView.swift */,
+				D6593A042B057553008972D5 /* ViewModels */,
 				D65939F22B0559FB008972D5 /* Assets.xcassets */,
 				D65939F42B0559FB008972D5 /* Preview Content */,
 			);
@@ -74,6 +77,14 @@
 				D65939F52B0559FB008972D5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D6593A042B057553008972D5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D6593A022B057549008972D5 /* LocationManager.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,10 +157,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D65939FD2B056147008972D5 /* UserMapView.swift in Sources */,
 				D6593A012B0561B5008972D5 /* UserListView.swift in Sources */,
 				D65939F12B0559FA008972D5 /* ContentView.swift in Sources */,
+				D62D6BF52B06B8EF0040FB9C /* UserMapView.swift in Sources */,
 				D65939FF2B05615B008972D5 /* UserTabView.swift in Sources */,
+				D6593A032B057549008972D5 /* LocationManager.swift in Sources */,
 				D65939EF2B0559FA008972D5 /* RideShareApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,7 +299,7 @@
 				DEVELOPMENT_TEAM = N9G5AHBK35;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Enable Location Please";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Enable Location Please";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -317,7 +329,7 @@
 				DEVELOPMENT_TEAM = N9G5AHBK35;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Enable Location Please";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Enable Location Please";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
