@@ -27,6 +27,7 @@
 		D65939FE2B05615B008972D5 /* UserTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTabView.swift; sourceTree = "<group>"; };
 		D6593A002B0561B5008972D5 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		D6593A022B057549008972D5 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		D6753ACA2B080F7F00B9AD2D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +44,7 @@
 		D65939E22B0559FA008972D5 = {
 			isa = PBXGroup;
 			children = (
+				D6753ACA2B080F7F00B9AD2D /* README.md */,
 				D65939ED2B0559FA008972D5 /* RideShare */,
 				D65939EC2B0559FA008972D5 /* Products */,
 			);
